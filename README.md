@@ -27,14 +27,17 @@ Send email using sendgrid API
 ```JSON
 {
     "flow": {
-        ...
-        [":flow_sendgrid/send", {
-            "template": "someTemplateId",
-            "to": "toSomeEmail@gmail.com",
-            "from": "fromSomeEmail@gmail.com",
-            "subject": "someEmailSubject"
-        }],
-        ...
+
+        "event": [
+            ...
+            [":flow_sendgrid/send", {
+                "template": "someTemplateId",
+                "to": "toSomeEmail@gmail.com",
+                "from": "fromSomeEmail@gmail.com",
+                "subject": "someEmailSubject"
+            }],
+            ...
+        ]
     }
 }
 ```

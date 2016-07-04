@@ -20,14 +20,14 @@ var moduleConfig = process.config.flow['flow-sendgrid'] || {};
  * @param {Function} next The next function.
  */
  exports.send = function (_options, data, next) {
- 	var self = this;
- 	var options = defOptions(_options, data);
+    var self = this;
+    var options = defOptions(_options, data);
 
- 	if (!options.template || !options.to || !options.from) {
- 		return next(new Error('Missing required properties.'));
- 	}
+    if (!options.template || !options.to || !options.from) {
+        return next(new Error('Missing required properties.'));
+    }
 
- 	// build the email template
+    // build the email template
     var email = new self._sendgridClient.Email({
         to: options.to,
         from: options.from,
@@ -68,19 +68,19 @@ var moduleConfig = process.config.flow['flow-sendgrid'] || {};
  */
  function defOptions (_options, data) {
 
- 	var options = {
- 		template: null,
- 		to: null,
- 		from: null,
- 		subject: null
- 	};
+    var options = {
+        template: null,
+        to: null,
+        from: null,
+        subject: null
+    };
 
- 	Object.keys(options).forEach(function (option) {
+    Object.keys(options).forEach(function (option) {
 
- 		options[option] = _options._[option] || data[option];
- 	});
+        options[option] = _options._[option] || data[option];
+    });
 
- 	return options;
+    return options;
  };
 
 /**
@@ -106,13 +106,13 @@ function buildMergeVars (data) {
  *  @private
  */
 exports.init = function (config, ready) {
-	var apiKey = moduleConfig.apiKey;
+    var apiKey = moduleConfig.apiKey;
 
-	if (!apiKey) {
-		return ready(new Error('Missing sendgrid api key.'));
-	}
+    if (!apiKey) {
+        return ready(new Error('Missing sendgrid api key.'));
+    }
 
-	this._sendgridClient = sendgrid(apiKey);
+    this._sendgridClient = sendgrid(apiKey);
 
-	ready();
+    ready();
 };
