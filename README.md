@@ -28,16 +28,19 @@ Send email using sendgrid API
 {
     "flow": {
 
-        "event": [
-            ...
-            [":flow_sendgrid/send", {
-                "template": "someTemplateId",
-                "to": "toSomeEmail@gmail.com",
-                "from": "fromSomeEmail@gmail.com",
-                "subject": "someEmailSubject"
-            }],
-            ...
-        ]
+        "event": {
+
+            "d": [
+                ...
+                [":flow_sendgrid/send", {
+                    "template": "someTemplateId",
+                    "to": "toSomeEmail@gmail.com",
+                    "from": "fromSomeEmail@gmail.com",
+                    "subject": "someEmailSubject"
+                }],
+                ...
+            ]
+        }
     }
 }
 ```
