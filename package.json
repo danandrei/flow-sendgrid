@@ -1,0 +1,24 @@
+{
+  "name": "flow-sendgrid",
+  "version": "0.1.0",
+  "description": "Send emails using sendgrid from flow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danandrei/flow-sendgrid.git"
+  },
+  "keywords": [
+    "Jillix",
+    "flow",
+    "sendgrid"
+  ],
+  "author": "Jillix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danandrei/flow-sendgrid/issues"
+  },
+  "homepage": "https://github.com/danandrei/flow-sendgrid#readme"
+}
