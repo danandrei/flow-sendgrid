@@ -8,13 +8,13 @@ var moduleConfig = process.config.flow['flow-sendgrid'] || {};
  *
  * @name send
  * @function
- * @param {Object} options Object containig the following options
+ * @param {Object} options Object containig the mail options (can also be added in the data object)
  *
  *  - `template` (String):  The template name (required).
  *  - `to` (String):  The receiver information (required).
  *  - `from` (String):  The sender information (required).
  *  - `subject` (String):  The email subject (optional).
- * @param {Object} data Object containig the following data
+ * @param {Object} data Object containig the mail data
  *  - `mergeVars` (Object):  The object containing template substitutions (optional).
  *
  * @param {Function} next The next function.
@@ -62,6 +62,8 @@ var moduleConfig = process.config.flow['flow-sendgrid'] || {};
 
 /**
  *  define send method options
+
+ *  @name defOptions
  *  @private
  */
  function defOptions (_options, data) {
@@ -83,6 +85,8 @@ var moduleConfig = process.config.flow['flow-sendgrid'] || {};
 
 /**
  *  Build the merge fields structure
+ *
+ *  @name buildMergeVars
  *  @private
  */
 function buildMergeVars (data) {
