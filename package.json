@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/danandrei/flow-sendgrid/issues"
   },
-  "homepage": "https://github.com/danandrei/flow-sendgrid#readme"
+  "homepage": "https://github.com/danandrei/flow-sendgrid#readme",
+  "dependencies": {
+    "sendgrid": "^1.9.2"
+  }
 }
