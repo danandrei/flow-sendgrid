@@ -52,7 +52,7 @@ var moduleConfig = process.config.flow['flow-sendgrid'] || {};
         }
 
         if (json && json.message === 'success') {
-            return next(data);
+            return next(null, data);
         } else {
             return next(new Error('A Sendgrid error occured while sending the template.'));
         }
