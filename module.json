@@ -2,17 +2,25 @@
     "@context": [
         "http://localhost:8080/context/module.jsonld",
         {
+            "template": "http://dbpedia.org/property/template",
+            "to": "http://schema.org/recipient",
+            "from": "http://schema.org/sender",
+            "subject": "http://purl.org/dc/terms/subject"
         }
     ],
     "@id": "https://github.com/jillix/flow-sendgrid#readme",
     "@type": "Module",
     "name": "flow-sendgrid",
     "version": "0.0.1",
-    "description": "Example module for flow",
+    "description": "Send emails using sendgrid from flow",
     "author": "jillix",
     "gitRepository": "git+https://github.com/jillix/flow-sendgrid.git",
     "exports": [
+        {
+            "@type": "DataHandler",
+            "name": "send",
+            "options": []
+        }
     ],
-    "options": [
-    ]
+    "options": []
 }
